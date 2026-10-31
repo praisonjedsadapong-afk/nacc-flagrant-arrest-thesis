@@ -55,12 +55,29 @@ def tag(el, reason, before=None):
 
 fns = {re.sub(r"\D", "", li["id"]): li for li in main.select("ol.fnlist li")}
 marked = dict(cfg["footnotes"])
+CPC_START = re.compile(r"\s*(ป\.วิ\.อาญา|ประมวลกฎหมายวิธีพิจารณาความอาญา)")
+cpc_ok = set(cfg.get("cpc_verified", []))
+cpc_fns = set()
+for n, li in fns.items():          # เชิงอรรถ ป.วิ.อาญา: คำนวณเหตุผลจากมาตราที่ยังไม่ยืนยัน
+    t = li.get_text()
+    if not CPC_START.match(t): continue
+    cpc_fns.add(n)
+    secs = list(dict.fromkeys(re.findall(r"มาตรา\s*(\d+(?:/\d+)?)", t)))
+    if "บัญชีแนบท้าย" in t: secs.append("บัญชีแนบท้าย")
+    todo = [x for x in secs if x not in cpc_ok]
+    marked.pop(n, None)
+    if todo:
+        lab = lambda x: x if x == "บัญชีแนบท้าย" else "ม." + x
+        done = [lab(x) for x in secs if x in cpc_ok]
+        r = "ตัวบทจากเว็บเอกชน ยังไม่เทียบราชกิจจาฯ และยังไม่ยืนยันว่าเป็นฉบับแก้ไขล่าสุดหรือไม่"
+        if done: r += "; ยืนยันแล้ว: " + ", ".join(done)
+        marked[n] = r + "; ยังไม่ตรวจ: " + ", ".join(lab(x) for x in todo)
 if cfg.get("propagate_ah_laew"):
     changed = True
     while changed:
         changed = False
         for n, li in fns.items():
-            if n in marked or n in cfg.get("cleared", {}): continue
+            if n in marked or n in cpc_fns or n in cfg.get("cleared", {}): continue
             m = re.search(r"อ้างแล้วเชิงอรรถที่ (\d+)", li.get_text())
             if m and m.group(1) in marked:
                 marked[n] = f"อ้างอิงต่อจากเชิงอรรถที่ {m.group(1)} ซึ่งยังไม่ยืนยัน"; changed = True
