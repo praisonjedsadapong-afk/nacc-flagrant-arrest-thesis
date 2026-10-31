@@ -1,0 +1,6 @@
+# secrets and local config — never commit tokens
+.mcp.json
+.claude/settings.local.json
+.env
+*.token
+__pycache__/
