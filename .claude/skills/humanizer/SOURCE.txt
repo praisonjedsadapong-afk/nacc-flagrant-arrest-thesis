@@ -1,0 +1,1 @@
+Source: https://github.com/blader/humanizer (v3.1.0, commit 0ef9fe5), MIT license. Copied unmodified on 2026-10-31.
