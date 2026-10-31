@@ -65,13 +65,16 @@ for n, li in fns.items():          # เชิงอรรถ ป.วิ.อา�
     secs = list(dict.fromkeys(re.findall(r"มาตรา\s*(\d+(?:/\d+)?)", t)))
     if "บัญชีแนบท้าย" in t: secs.append("บัญชีแนบท้าย")
     todo = [x for x in secs if x not in cpc_ok]
-    marked.pop(n, None)
+    explicit = marked.pop(n, None)   # เหตุผลที่ระบุเองใน pending.json ต่อท้ายเหตุผลอัตโนมัติ
     if todo:
         lab = lambda x: x if x == "บัญชีแนบท้าย" else "ม." + x
         done = [lab(x) for x in secs if x in cpc_ok]
         r = "ตัวบทจากเว็บเอกชน ยังไม่เทียบราชกิจจาฯ และยังไม่ยืนยันว่าเป็นฉบับแก้ไขล่าสุดหรือไม่"
         if done: r += "; ยืนยันแล้ว: " + ", ".join(done)
         marked[n] = r + "; ยังไม่ตรวจ: " + ", ".join(lab(x) for x in todo)
+        if explicit: marked[n] += "; " + explicit
+    elif explicit:
+        marked[n] = explicit
 if cfg.get("propagate_ah_laew"):
     changed = True
     while changed:
