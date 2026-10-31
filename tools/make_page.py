@@ -60,7 +60,7 @@ if cfg.get("propagate_ah_laew"):
     while changed:
         changed = False
         for n, li in fns.items():
-            if n in marked: continue
+            if n in marked or n in cfg.get("cleared", {}): continue
             m = re.search(r"อ้างแล้วเชิงอรรถที่ (\d+)", li.get_text())
             if m and m.group(1) in marked:
                 marked[n] = f"อ้างอิงต่อจากเชิงอรรถที่ {m.group(1)} ซึ่งยังไม่ยืนยัน"; changed = True
