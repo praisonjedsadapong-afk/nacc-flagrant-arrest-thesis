@@ -6,22 +6,23 @@
 
 | path | เนื้อหา |
 |---|---|
-| `HANDOVER.md` | สรุปบริบทงานวิจัย ปัญหา ข้อเสนอ และงานค้าง (ใช้เริ่ม chat ใหม่) |
-| `src/` | ไฟล์ต้นฉบับสร้างเล่ม (`gen.py`, `cite.py`, `b1.py`–`b5.py`, `mkflag2.py`) |
+| `HANDOVER.md` | สรุปบริบทงานวิจัย ปัญหา ข้อเสนอ สถานะการตรวจ และงานค้าง (ใช้เริ่ม chat ใหม่ ปรับปรุง 2026-11-01) |
+| `CLAUDE.md` | กฎการทำงานและสถานะการตรวจล่าสุด |
+| `src/` | (ว่าง) เดิมเก็บสคริปต์สร้างเล่มรุ่นเก่า ไม่ใช้แล้ว เนื้อหาแก้ที่ `draft/original.html` โดยตรง |
 | `docs/index.html` | หน้าเว็บฉบับร่างแบบเรียบ (สร้างจาก `draft/original.html`) ใช้ copy ลง Word; ป้าย (รอตรวจสอบ) = แหล่งที่ยังไม่ยืนยัน |
 | `draft/original.html` | ไฟล์ร่างต้นฉบับ (แหล่งความจริงของเนื้อหา ณ 2026-10-31) |
 | `tools/` | `make_page.py` แปลงร่างเป็นหน้าเว็บ, `pending.json` รายการที่ติดป้ายรอตรวจสอบ |
 | `sources/` | ทะเบียนแหล่งตัวบทและข้อความตัดตอน (ดู `sources/INDEX.md`) |
-| `research-notes/` | บันทึกงานวิจัยที่เกี่ยวข้อง เช่น ปริญญา ไชยถาวร (2563) |
+| `research-notes/` | (ว่าง) บันทึกงานวิจัยที่เกี่ยวข้องอยู่ใน `sources/INDEX.md` และ `HANDOVER.md` หัวข้อ 6 |
 
 ## งานค้าง
 
-ดูรายการใน `HANDOVER.md` หัวข้อ 7
+ดูรายการใน `HANDOVER.md` หัวข้อ 8
 
 ## สร้างหน้าเว็บใหม่
 
 ```
-python3 tools/make_page.py draft/original.html docs/index.html
+python3 -I tools/make_page.py draft/original.html docs/index.html
 ```
 
 เมื่อตรวจแหล่งใดเสร็จ ให้ลบรายการนั้นออกจาก `tools/pending.json` แล้วสร้างใหม่
