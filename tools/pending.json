@@ -1,6 +1,8 @@
 {
  "_doc": "ป้าย (รอตรวจสอบ) ในหน้าเว็บ: คีย์ = เลขเชิงอรรถ, ค่า = เหตุผลที่แสดงในเนื้อหา แก้แล้วรัน tools/make_page.py ใหม่ ตรวจเสร็จให้ลบรายการออก",
- "footnotes": {},
+ "footnotes": {
+
+ },
  "propagate_ah_laew": true,
  "bibliography": {},
  "cleared": {},
