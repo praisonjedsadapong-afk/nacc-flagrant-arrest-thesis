@@ -1,0 +1,35 @@
+# ชั่วคราว: ดึงตัวบทต่างประเทศมาตรวจ (เซสชัน Claude เข้าเว็บเหล่านี้ไม่ได้) ใช้เฉพาะกิ่ง fetch-foreign-law แล้วลบกิ่งนี้ทิ้งหลังอ่านเสร็จ
+name: fetch-foreign-law
+on:
+  push:
+    branches: [fetch-foreign-law]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: fetch pages
+        run: |
+          mkdir -p fetched
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+          get() {
+            code=$(curl -sS -L -m 60 -A "$UA" -H "Accept-Language: en" -o "fetched/$1" -w "%{http_code}" "$2" || echo "ERR")
+            echo "$1 $code $(wc -c < fetched/$1 2>/dev/null) $2" | tee -a fetched/_status.txt
+          }
+          get sg_pca_whole.html "https://sso.agc.gov.sg/Act/PCA1960?WholeDoc=1"
+          get sg_pca_s15_s22.html "https://sso.agc.gov.sg/Act/PCA1960?ProvIds=pr15-,pr22-"
+          get hk_cap204.html "https://www.elegislation.gov.hk/hk/cap204"
+          get hk_cap204_en.html "https://www.elegislation.gov.hk/hk/cap204!en"
+          get hk_cap204_en.pdf "https://www.elegislation.gov.hk/hk/cap204!en.pdf"
+          get us_payton.html "https://supreme.justia.com/cases/federal/us/445/573/"
+          get us_riverside.html "https://supreme.justia.com/cases/federal/us/500/44/"
+          get uk_pace_s24.html "https://www.legislation.gov.uk/ukpga/1984/60/section/24"
+      - name: commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add fetched
+          git commit -m "fetched foreign law pages" || echo nothing
+          git push origin HEAD:fetch-foreign-law
