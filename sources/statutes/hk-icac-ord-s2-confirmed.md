@@ -1,6 +1,6 @@
-# ICAC Ordinance (Cap. 204) s.2 — ข้อความที่ผู้ใช้วางมา รอยืนยัน (2026-11-04)
+# ICAC Ordinance (Cap. 204) s.2 — ยืนยันแล้วโดยผู้เขียน (2026-11-04)
 
-ผู้ใช้วางข้อความ s.2 มา (ไม่ได้ระบุว่า "ยืนยันแล้ว") ผู้ช่วยเทียบกับ `sources/Cap 204 PDF (24-06-2021) (English).pdf` แล้ว **ตรงกันทุกตัวอักษร** (1,764 ตัวอักษรหลังตัดช่องว่างและหัว/ท้ายหน้า) ตามกฎโครงการ ยังไม่ล้างป้ายใด จนกว่าผู้ใช้ยืนยันถ้อยคำ
+ที่มา: ข้อความที่ผู้เขียนวางและยืนยันว่าถูกต้อง (ไม่ได้ระบุแหล่งเฉพาะ) ผู้ช่วยเทียบกับ `sources/Cap 204 PDF (24-06-2021) (English).pdf` (Last updated date 24.6.2021) แล้ว ตรงกันทุกตัวอักษร (1,764 ตัวอักษรหลังตัดช่องว่างและหัว/ท้ายหน้า) **ผู้ใช้ยืนยัน ยังไม่ได้ตรวจการแก้ไขหลัง 24 มิ.ย. 2021**
 
 2.Interpretation
 In this Ordinance, unless the context otherwise requires—
@@ -23,3 +23,7 @@ Public Service (Administration) Order (《公務人員(管理)命令》) means�
 (c)any other regulation made or any direction given under that Order,
 as amended from time to time. (Added 1 of 2003 s. 3)
 (Amended 14 of 2003 s. 19)
+
+## ข้อสังเกต
+- ใช้ใน §3.3.2 เฉพาะนิยาม "officer" (เจ้าหน้าที่ของ ICAC ที่แต่งตั้งตาม s.8) และ "prescribed officer" ที่ s.10 (1) อ้าง
+- "public servant" และ "public body" นิยามโดยอ้าง Prevention of Bribery Ordinance (Cap. 201) s.2 ซึ่งยังไม่มีไฟล์
