@@ -89,3 +89,5 @@
 - `sources/excerpts/th-thesis-parinya-us-sg-sections-2563.md` = สรุปส่วนสหรัฐ/สิงคโปร์ของสารนิพนธ์ปริญญา (2563) ใน `sources/จับ ศรีปทุม.pdf` อ่านแล้ว 2026-11-02 ใช้เป็นแหล่งรองของข้อความระดับแนวคิดเรื่อง probable cause การจับโดยไม่มีหมาย และ Exclusionary Rule (ไม่มีเรื่องค้นโดยไม่มีหมาย)
 
 - `sources/Prevention of Corruption Act 1960.pdf` = Prevention of Corruption Act 1960 (สิงคโปร์) 2020 Revised Edition (รวมแก้ไขถึง 1 ธ.ค. 2021) 52 หน้า ผู้ใช้อัปโหลด 2026-11-03 ผู้ช่วยอ่าน s.1–4, 15–22, 26, 32 แล้ว บันทึกเทียบกับเล่มที่ `sources/statutes/sg-pca-1960-notes.md` ผู้ใช้ยังไม่ยืนยันถ้อยคำ
+
+- `sources/Cap 204 PDF (24-06-2021) (English).pdf` = Independent Commission Against Corruption Ordinance (Cap. 204) ฮ่องกง ฉบับภาษาอังกฤษ Last updated 24.6.2021 ผู้ใช้อัปโหลด 2026-11-04 ผู้ช่วยอ่าน s.2, 9, 10, 10A, 10AA, 10B, 10C แล้ว บันทึกเทียบกับเล่มที่ `sources/statutes/hk-icac-ord-cap204-notes.md` ผู้ใช้ยังไม่ยืนยันถ้อยคำ ยังไม่มี Prevention of Bribery Ordinance (Cap. 201)
