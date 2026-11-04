@@ -91,3 +91,5 @@
 - `sources/Prevention of Corruption Act 1960.pdf` = Prevention of Corruption Act 1960 (สิงคโปร์) 2020 Revised Edition (รวมแก้ไขถึง 1 ธ.ค. 2021) 52 หน้า ผู้ใช้อัปโหลด 2026-11-03 ผู้ช่วยอ่าน s.1–4, 15–22, 26, 32 แล้ว บันทึกเทียบกับเล่มที่ `sources/statutes/sg-pca-1960-notes.md` ผู้ใช้ยังไม่ยืนยันถ้อยคำ
 
 - `sources/Cap 204 PDF (24-06-2021) (English).pdf` = Independent Commission Against Corruption Ordinance (Cap. 204) ฮ่องกง ฉบับภาษาอังกฤษ Last updated 24.6.2021 ผู้ใช้อัปโหลด 2026-11-04 ผู้ช่วยอ่าน s.2, 9, 10, 10A, 10AA, 10B, 10C แล้ว บันทึกเทียบกับเล่มที่ `sources/statutes/hk-icac-ord-cap204-notes.md` ผู้ใช้ยังไม่ยืนยันถ้อยคำ ยังไม่มี Prevention of Bribery Ordinance (Cap. 201)
+
+- `sources/Criminal Procedure Code 2010.pdf` = Criminal Procedure Code 2010 (สิงคโปร์) 599 หน้า หัวหน้า "Informal Consolidation – version in force from 15/9/2026" (ปก 2020 Rev. Ed.) ผู้ใช้อัปโหลด 2026-11-04 ผู้ช่วยอ่าน s.18, 20, 23, 24–35, 37, 64, 67–68, 258 แล้ว บันทึกที่ `sources/statutes/sg-cpc-2010-notes.md` ผู้ใช้ยังไม่ยืนยันถ้อยคำ ไม่ใช่ฉบับ official
