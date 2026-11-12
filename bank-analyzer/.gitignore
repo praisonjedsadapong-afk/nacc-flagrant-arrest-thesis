@@ -1,9 +1,0 @@
-# สเตรทเมนต์จริงและรายงานผล ห้ามเข้ารีโป (public)
-private/
-*.xlsx
-*.xls
-*.pdf
-!samples/*.csv
-report*.xlsx
-__pycache__/
-.pytest_cache/
