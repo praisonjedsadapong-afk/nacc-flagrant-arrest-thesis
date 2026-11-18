@@ -102,7 +102,7 @@ KEEP = {"id", "href", "colspan", "rowspan", "class"}
 for el in main.find_all(True):
     for a in list(el.attrs):
         if a not in KEEP: del el[a]
-        elif a == "class" and "pending" not in el.get("class", []): del el[a]
+        elif a == "class" and "pending" not in el.get("class", []) and not (el.name == "mark" and "adv" in el.get("class", [])): del el[a]
 for el in main.find_all(["section", "span"]):
     if el.name == "section" and not el.get("id"): el.unwrap()
     elif el.name == "span" and "pending" not in (el.get("class") or []): el.unwrap()
@@ -120,7 +120,7 @@ CSS = """body{font-family:"TH Sarabun New","Angsana New","Sarabun",serif;font-si
 h2{font-size:1.3em;margin:1.6em 0 .4em}h3{font-size:1.15em;margin:1.2em 0 .3em}h4{font-size:1.05em;margin:1em 0 .2em}
 p{margin:.5em 0;text-align:justify}blockquote{margin:.5em 0 .5em 2em}
 table{border-collapse:collapse;margin:.8em 0;width:100%}th,td{border:1px solid #000;padding:.2em .4em;vertical-align:top}
-sup a{text-decoration:none}.pending{background:#ffe27a}.clean .pending{display:none}.tools{user-select:none;border:1px solid #999;padding:.5em;margin:0 0 1em;font-size:.85em;font-family:sans-serif}.tools button{font:inherit;padding:.3em .8em;cursor:pointer}@media print{.tools{display:none}}nav ul{columns:2}"""
+sup a{text-decoration:none}.pending{background:#ffe27a}mark.adv{background:#bfe3ff;color:inherit}.clean mark.adv{background:none}.clean .pending{display:none}.tools{user-select:none;border:1px solid #999;padding:.5em;margin:0 0 1em;font-size:.85em;font-family:sans-serif}.tools button{font:inherit;padding:.3em .8em;cursor:pointer}@media print{.tools{display:none}}nav ul{columns:2}"""
 TOOLS = ('<div class="tools"><button id="cl" type="button">ซ่อนป้าย (รอตรวจสอบ) — สำหรับ copy ลง Word</button> '
          '<span>ป้ายสีเหลืองคือแหล่งที่ยังไม่ยืนยัน กดปุ่มเพื่อซ่อนก่อน copy; กดอีกครั้งเพื่อแสดง</span><br><span>สร้างหน้าเมื่อ ' + __import__("datetime").datetime.utcnow().strftime("%Y-%m-%d %H:%M") + ' UTC</span></div>\n'
          '<script>var b=document.getElementById("cl");b.onclick=function(){var c=document.body.classList.toggle("clean");'

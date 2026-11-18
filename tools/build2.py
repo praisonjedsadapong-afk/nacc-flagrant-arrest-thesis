@@ -20,6 +20,7 @@ footnotes=[]; keys={}
 def inline(t):
     t=html.escape(t,quote=False)
     t=re.sub(r"\*\*(.+?)\*\*",r"<strong>\1</strong>",t)
+    t=re.sub(r"==(.+?)==",r'<mark class="adv">\1</mark>',t)
     return re.sub(r"//(.+?)//",r"<em>\1</em>",t)
 def render(t):
     out=[];pos=0
