@@ -22,6 +22,7 @@ def inline(t):
     t=re.sub(r"\*\*(.+?)\*\*",r"<strong>\1</strong>",t)
     t=re.sub(r"==(.+?)==",r'<mark class="adv">\1</mark>',t)
     t=re.sub(r"!!(.+?)!!",r'<mark class="fix">\1</mark>',t)
+    t=re.sub(r"%%(.+?)%%",r'<mark class="org">\1</mark>',t)
     return re.sub(r"//(.+?)//",r"<em>\1</em>",t)
 def render(t):
     out=[];pos=0
